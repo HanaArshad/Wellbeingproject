@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Hide scrollbars on the whole page */
+      height: 100%; /* Full height for the body */
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 58px; /* Height of the top bar */
+      background-color: black;
+    }
+
+    svg {
+      display: block;
+    }
+
+    .logo-link {
+      position: absolute;
+      top: 0;
+      left: 11px; /* Adjust this value to position the logo horizontally */
+    }
+
+    .logo-link img {
+      height: 58px; /* Ensure the image height matches the height of the rectangle */
+    }
+
+    .buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .buttons button {
+      background-color: rgba(0, 0, 0, 0.936);
+      border: 5px solid rgb(0, 0, 0);
+      padding: 5px 10px;
+      margin-right: 8px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .about-us-button {
+      color: white;
+    }
+
+    .data-arena-button {
+      color: white;
+    }
+
+    .dashboard-button {
+      color: #CFF8BD;
+    }
+
+    /* New container for text and images */
+    .content-container {
+      position: relative;
+      width: 100%;
+      height: calc(50vh - 58px); /* Adjusted to fit the top half of the viewport */
+      background-color: white; /* Background color for the scroll area */
+      overflow-x: auto; /* Enable horizontal scrolling */
+      overflow-y: hidden; /* Hide vertical scroll */
+      white-space: nowrap; /* Prevent images and text boxes from wrapping to a new line */
+      padding: 10px; /* Add some padding around the content */
+      top: -10px;
+    }
+
+    .content-container .item {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 20px; /* Space between items */
+    }
+
+    .content-container img {
+      height: 300px; /* Image height */
+      width: auto;   /* Maintain aspect ratio */
+    }
+
+    .text-box {
+      max-width: 300px; /* Adjust the width as needed */
+      background-color: #ffff; /* Background color of text box */
+      border: 1px solid #ddd; /* Border color */
+      padding: 10px; /* Padding inside the text box */
+      display: inline-block; /* Align with images */
+      vertical-align: top; /* Align text box with the top of images */
+      margin-top: 0; /* Ensure there’s no margin pushing the text box down */
+    }
+
+    .text-box p {
+      margin: 0;
+      font-size: 16px; /* Adjust font size as needed */
+    }
+
+    p {
+      font-size: 20px; /* Title text size */
+      margin: 20px; /* Space around the title text */
+    }
+
+    /* Container for bottom content */
+    .bottom-container {
+      position: relative;
+      width: 100%;
+      height: 70vh; /* Bottom half of the viewport */
+      background-color: #ffffff; /* Background color for bottom container */
+      
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: space-between; /* Distributes the images evenly */
+      align-items: center; /* Aligns the images vertically in the center */
+      padding: 20px; /* Optional padding around the container */
+    }
+
+    .image-container img {
+      width: 200px;
+      height: auto; /* Maintain the aspect ratio */
+      margin-top: -40px; /* Move the images up by 20px */
+    }
+
+    /* Divider styles */
+    .divider {
+      width: 100%;
+      height: 4px;
+      background-color: #ddd; /* Light gray divider */
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <svg width="100%" height="58">
+      <rect width="100%" height="58" fill="black" />
+    </svg>
+
+    <!-- Logo as a clickable button to home -->
+    <a href="home.html" class="logo-link">
+      <img src="Logo1.png" alt="Logo" />
+    </a>
+
+    <!-- Buttons on the right side of the rectangle -->
+    <div class="buttons">
+      <button class="about-us-button" onclick="window.location.href='about-us.html'">About us</button>
+      <button class="data-arena-button" onclick="window.location.href='data-arena.html'">Data Arena</button>
+      <button class="dashboard-button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+    </div>
+  </div>
+
+  <!-- New container for text and images -->
+  <p>Data visualisation</p>
+  <div class="content-container">
+    <div class="item">
+      <img src="graph1.png" alt="Image 1">
+    </div>
+    <div class="item">
+      <div class="text-box">
+        <p>Explanatory text for Image 1.</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="graph2.png" alt="Image 2">
+    </div>
+    <div class="item">
+      <div class="text-box">
+        <p>Explanatory text for Image 2.</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="graph3.png" alt="Image 3">
+    </div>
+    <div class="item">
+      <div class="text-box">
+        <p>Explanatory text for Image 3.</p>
+      </div>
+    </div>
+
+    <!-- Adding more images -->
+    <div class="item">
+      <img src="graph4.png" alt="Image 4">
+    </div>
+    <div class="item">
+      <div class="text-box">
+        <p>Explanatory text for Image 4.</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="graph5.png" alt="Image 5">
+    </div>
+    <div class="item">
+      <div class="text-box">
+        <p>Explanatory text for Image 5.</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="graph6.png" alt="Image 6">
+    </div>
+    <div class="item">
+      <div class="text-box">
+        <p>Explanatory text for Image 6.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider to separate the top scrollable section from the bottom -->
+  
+  <div class="divider"></div>
+
+  <!-- Bottom content -->
+  <div class="bottom-container">
+    <p>Recommendations</p>
+    <div class="image-container">
+      <img src="City.png" alt="City">
+      <img src="Books.png" alt="Books">
+      <img src="Playground.png" alt="Playground">
+      <img src="Tree.png" alt="Tree">
+    </div>
+  </div>
+
+</body>
+</html>

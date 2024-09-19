@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    body {
+      background-image: url('background.png');
+      background-size: cover; /* Ensure the image covers the entire viewport */
+      background-position: center 55px; /* Center the image */
+      background-repeat: no-repeat; /* Prevent repeating the image */
+      height: 100vh; /* Set height to 100% of the viewport height */
+      width: 100vw; /* Set width to 100% of the viewport width */
+    
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 58px;
+      background-color: black; /* Ensure the rectangle has a solid background color */
+    }
+    .logo-link {
+      position: absolute;
+      top: 0;
+      left: 11px; /* Adjust this value to position the logo horizontally */
+    
+    }
+    .logo-link img {
+      height: 58px; /* Ensure the image height matches the height of the rectangle */
+   
+    }
+    .buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .buttons button {
+      background-color: rgba(0, 0, 0, 0.936);
+      border: 5px solid rgb(0, 0, 0);
+      padding: 5px 10px;
+      margin-right: 8px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+    .about-us-button {
+      color: #ffffff; /* Set the text color to white */
+    }
+    .data-arena-button {
+      color: white; /* Set the text color to white */
+    }
+    .dashboard-button {
+      color: white; /* Set the text color to white */
+    }
+  </style>
+  <style>
+    .transparent-image {
+        transform: translateX(-50%); /* Center horizontally */
+        position: absolute; /* Needed for top and left positioning */
+        top: 138px; /* Vertical position */
+        left: 50%; /* Horizontal position */
+        opacity: 0.8; /* Adjust this value to control the transparency */
+        width: auto;
+        height:auto
+      }
+      .rectangle1-svg {
+        position: absolute; /* Positioning context */
+        top: 466px; /* Vertical position, adjust as needed */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+        opacity: 0.8; /* Adjust opacity for transparency */
+        width: 1107px; /* Fixed width for the SVG */
+        border-radius: 17px;
+
+      }
+      .rectangle2-svg {
+        position: absolute; /* Positioning context */
+        top: 618px; /* Vertical position, adjust as needed */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+        opacity: 0.8; /* Adjust opacity for transparency */
+        width: 1107px; /* Fixed width for the SVG */
+        border-radius: 17px;
+      }
+    
+    </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Rectangle header -->
+    <svg width="100%" height="58">
+      <rect width="100%" height="58" fill="black" />
+    </svg>
+    <!-- Rectangle box 1 -->
+    <svg class="rectangle1-svg" height="107">
+        <a href="dashboard.html"  rel="noopener noreferrer">
+        <rect width="100%" height="107" fill= "#FFFFFF"/>
+        <text  font-size="19px", font="Ledger">
+            <tspan x="1%", y = 40%>Data Dashboard: Displays various charts and graphs that showcase findings from our data analysis. It provides</tspan>
+            <tspan x="1%", y="65%">recommendations to policymakers based on these findings and includes visual evidence to support these recommendations.</tspan>
+          </text>
+          <image x="85%"  href="dashboard.png" />
+          </a>
+      </svg>
+      <!-- Rectangle box 2 -->
+      <svg class="rectangle2-svg" height="107" >
+        <a href="data-arena.html"  rel="noopener noreferrer">
+        <rect width="100%" height="107" fill= "#FFFFFF"/>
+        <text font-size="19px">
+        <tspan x="1%", y = 40%>Data Arena: Is a 3D visualization platform that presents information in an immersive and interactive manner.</tspan>
+        </text>
+        <image width=9% x="85%" y='', href="3D.png" />
+    </a>
+      </svg>
+
+    <!-- Logo as a clickable button to home -->
+    <a href="home.html" class="logo-link">
+      <img src="Logo1.png" alt="Logo" />
+    </a>
+    
+    <img src="title.png" alt="Transparent Image" class="transparent-image" top: 137/>
+
+    <!-- Buttons on the right side of the rectangle -->
+    <div class="buttons">
+      <button class="about-us-button" onclick="window.location.href='about-us.html'">About us</button>
+      <button class="data-arena-button" onclick="window.location.href='data-arena.html'">Data Arena</button>
+      <button class="dashboard-button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+    </div>
+  </div>
+</body>
+</html>
