@@ -6,16 +6,19 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
+ 
     }
+    
     body {
-      background-image: url('background.png');
+      background-image: url('Background.png');
       background-size: cover; /* Ensure the image covers the entire viewport */
       background-position: center 55px; /* Center the image */
       background-repeat: no-repeat; /* Prevent repeating the image */
-      height: 100vh; /* Set height to 100% of the viewport height */
+      background-attachment: scroll; /* Allow the background image to scroll with the content */
+      min-height: 120vh; /* Set a minimum height to accommodate content */
       width: 100vw; /* Set width to 100% of the viewport width */
-    
-    }
+  }
+  
     .container {
       position: relative;
       width: 100%;
