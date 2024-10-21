@@ -1,72 +1,186 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Arena</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-      body, html {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-      }
-      .container {
-        position: relative;
-        width: 100%;
-        height: 58px;
-      }
-      svg {
-        display: block;
-      }
-      .logo-link {
-        position: absolute;
-        top: 0;
-        left: 11px; /* Adjust this value to position the logo horizontally */
-      }
-      .logo-link img {
-        height: 58px; /* Ensure the image height matches the height of the rectangle */
-      }
-      .buttons {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-      }
-      .buttons button {
-        background-color: rgba(0, 0, 0, 0.936);
-        border: 5px solid rgb(0, 0, 0);
-        padding: 5px 10px;
-        margin-right: 8px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 15px;
-      }
-      
-      .about-us-button {
-        color: white;/* Set the text color to green */
-      }
-      .data-arena-button {
-        color: #CFF8BD;
-      }
-      .dashboard-button {
-        color: white;
-      }
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 58px;
+        }
+        svg {
+            display: block;
+        }
+        .logo-link {
+            position: absolute;
+            top: 0;
+            left: 11px;
+        }
+        .logo-link img {
+            height: 58px;
+        }
+        .buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .buttons button {
+            background-color: rgba(0, 0, 0, 0.936);
+            border: 5px solid rgb(0, 0, 0);
+            padding: 5px 10px;
+            margin-right: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .buttons button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .about-us-button, .dashboard-button {
+            color: white;
+        }
+        .data-arena-button {
+            color: #CFF8BD;
+        }
+        .image-slider {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+        .info-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .nav-button {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
     </style>
-  </head>
-  
-  <body>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
     <div class="container">
-      <svg width="100%" height="58">
-        <rect width="100%" height="58" fill="black" />
-      </svg>
+        <svg width="100%" height="58">
+            <rect width="100%" height="58" fill="black" />
+        </svg>
 
-      <!-- Logo as a clickable button to home -->
-      <a href="home.html" class="logo-link">
-        <img src="Logo1.png" alt="Logo" />
-      </a>
+        <!-- Logo as a clickable button to home -->
+        <a href="home.html" class="logo-link">
+            <img src="Logo1.png" alt="Logo" />
+        </a>
 
-      <!-- Buttons on the right side of the rectangle -->
-      <div class="buttons">
-        <button class="about-us-button" onclick="window.location.href='about-us.html'">About us</button>
-        <button class="data-arena-button" onclick="window.location.href='data-arena.html'">Data Arena</button>
-        <button class="dashboard-button" onclick="window.location.href='dashboard.html'">Dashboard</button>
-      </div>
+        <!-- Buttons on the right side of the rectangle -->
+        <div class="buttons">
+            <button class="about-us-button" onclick="window.location.href='about-us.html'" aria-label="About Us">About Us</button>
+            <button class="data-arena-button" onclick="window.location.href='data-arena.html'" aria-label="Data Arena">Data Arena</button>
+            <button class="dashboard-button" onclick="window.location.href='dashboard.html'" aria-label="Dashboard">Dashboard</button>
+        </div>
     </div>
-  </body>
+
+    <!-- Data Arena Content -->
+    <div class="image-slider">
+        <div class="slides">
+            <div class="slide"><img src="graph1.png" alt="Wellbeing Data 1"></div>
+            <div class="slide"><img src="graph2.png" alt="Wellbeing Data 2"></div>
+            <div class="slide"><img src="tree.png" alt="Wellbeing Data 3"></div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="nav-button" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Information Section -->
+    <div class="info-section">
+        <h2>About the Data Arena</h2>
+        <p id="slide-description">This is the description for the first slide.</p>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        // Text descriptions for each slide
+        const descriptions = [
+            "This is the description for the first slide.",
+            "This is the description for the second slide.",
+            "This is the description for the third slide."
+        ];
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? "block" : "none";
+            });
+            // Update the description based on the current slide index
+            document.getElementById("slide-description").innerText = descriptions[slideIndex];
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }
+            showSlides();
+        }
+
+        // Automatic rotation of slides
+        setInterval(() => {
+            changeSlide(1); // Automatically change the slide every 5 seconds
+        }, 5000); // Change slide every 5 seconds
+
+        // Initially show the first slide
+        showSlides();
+    </script>
+</body>
 </html>
