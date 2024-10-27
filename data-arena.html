@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Arena</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: Arial, sans-serif;
+            background-color: black;
+        }
+        img {
+            max-width: 100%; /* Adjust as needed */
+            height: auto;
+            cursor: pointer; /* Change cursor to indicate clickability */
+            transition: transform 0.3s ease; /* Smooth scale transition */
+        }
+
+
+        .scroll-container {
+            display: flex; /* Use flexbox for horizontal layout */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            width: 100%; /* Full width of the viewport */
+            height: 100vh; /* Full height of the viewport */
+            scroll-snap-type: x mandatory; /* Enable snap scrolling */
+        }
+
+        .scroll-container img {
+            max-height: 100%; /* Maintain aspect ratio and fit height */
+            margin: auto; /* Center images vertically */
+            scroll-snap-align: center; /* Center alignment for snapping */
+            transition: transform 0.3s ease; /* Smooth scale transition */
         }
         .container {
             position: relative;
             width: 100%;
             height: 58px;
+            border-bottom: 1px solid white; /* Add a white bottom border */
         }
+
         svg {
             display: block;
         }
+
         .logo-link {
             position: absolute;
             top: 0;
             left: 11px;
         }
+
         .logo-link img {
             height: 58px;
         }
+
         .buttons {
             position: absolute;
             top: 10px;
             right: 10px;
         }
+
         .buttons button {
             background-color: rgba(0, 0, 0, 0.936);
             border: 5px solid rgb(0, 0, 0);
@@ -43,47 +74,21 @@
             font-size: 15px;
             transition: background-color 0.3s, transform 0.2s;
         }
+
         .buttons button:hover {
             background-color: rgba(255, 255, 255, 0.2);
             transform: scale(1.05);
         }
-        .about-us-button, .dashboard-button {
+
+        .about-us-button,
+        .dashboard-button {
             color: white;
         }
+
         .data-arena-button {
             color: #CFF8BD;
         }
-        .image-slider {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            border: 2px solid #ddd;
-        }
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            height: 100%;
-        }
-        .slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        .slide img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto;
-        }
-        .info-section {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-        }
+
         .nav-buttons {
             position: absolute;
             top: 50%;
@@ -92,6 +97,7 @@
             justify-content: space-between;
             transform: translateY(-50%);
         }
+
         .nav-button {
             background-color: rgba(255, 255, 255, 0.8);
             border: none;
@@ -101,6 +107,7 @@
             border-radius: 50%;
             transition: background-color 0.3s;
         }
+
         .nav-button:hover {
             background-color: rgba(255, 255, 255, 0.5);
         }
@@ -121,66 +128,24 @@
 
         <!-- Buttons on the right side of the rectangle -->
         <div class="buttons">
-            <button class="about-us-button" onclick="window.location.href='about-us.html'" aria-label="About Us">About Us</button>
-            <button class="data-arena-button" onclick="window.location.href='data-arena.html'" aria-label="Data Arena">Data Arena</button>
-            <button class="dashboard-button" onclick="window.location.href='dashboard.html'" aria-label="Dashboard">Dashboard</button>
+            <button class="about-us-button" onclick="window.location.href='about-us.html'" aria-label="About Us">About
+                Us</button>
+            <button class="data-arena-button" onclick="window.location.href='data-arena.html'"
+                aria-label="Data Arena">Data Arena</button>
+            <button class="dashboard-button" onclick="window.location.href='dashboard.html'"
+                aria-label="Dashboard">Dashboard</button>
         </div>
     </div>
 
-    <!-- Data Arena Content -->
-    <div class="image-slider">
-        <div class="slides">
-            <div class="slide"><img src="graph1.png" alt="Wellbeing Data 1"></div>
-            <div class="slide"><img src="graph2.png" alt="Wellbeing Data 2"></div>
-            <div class="slide"><img src="tree.png" alt="Wellbeing Data 3"></div>
-        </div>
+   
+     
+    <div class="scroll-container">
+        <img src="Welcome.png" alt="Welcome Image">
+        <img src="Syd1.png" alt="Sydney Image">
+        <img src="Info.png" alt="Sydney Image">
+      </div>
 
-        <!-- Navigation Buttons -->
-        <div class="nav-buttons">
-            <button class="nav-button" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="nav-button" onclick="changeSlide(1)">&#10095;</button>
-        </div>
-    </div>
 
-    <!-- Information Section -->
-    <div class="info-section">
-        <h2>About the Data Arena</h2>
-        <p id="slide-description">This is the description for the first slide.</p>
-    </div>
-
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        // Text descriptions for each slide
-        const descriptions = [
-            "This is the description for the first slide.",
-            "This is the description for the second slide.",
-            "This is the description for the third slide."
-        ];
-
-        function showSlides() {
-            slides.forEach((slide, index) => {
-                slide.style.display = (index === slideIndex) ? "block" : "none";
-            });
-            // Update the description based on the current slide index
-            document.getElementById("slide-description").innerText = descriptions[slideIndex];
-        }
-
-        function changeSlide(n) {
-            slideIndex += n;
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-            if (slideIndex < 0) { slideIndex = slides.length - 1; }
-            showSlides();
-        }
-
-        // Automatic rotation of slides
-        setInterval(() => {
-            changeSlide(1); // Automatically change the slide every 5 seconds
-        }, 5000); // Change slide every 5 seconds
-
-        // Initially show the first slide
-        showSlides();
-    </script>
 </body>
+
 </html>
