@@ -1,141 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - City Wellbeing Project</title>
+<html>
+  <head>
     <style>
-        
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        /* Header styling */
-        .container {
-            position: relative;
-            width: 100%;
-            height: 58px;
-        }
-        svg {
-            display: block;
-        }
-        .logo-link {
-            position: absolute;
-            top: 0;
-            left: 11px;
-        }
-        .logo-link img {
-            height: 58px;
-        }
-        .buttons {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 8px;
-        }
-        .buttons button {
-            background-color: rgba(0, 0, 0, 0.936);
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 15px;
-            color: white;
-        }
-        .about-us-button {
-            color: #CFF8BD;
-        }
-
-        /* Main content styling */
-        .content-container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            display: flex;
-            gap: 20px;
-        }
-        .text-content {
-            flex: 1;
-        }
-        .text-content h1 {
-            font-size: 28px;
-            color: #333;
-        }
-        .text-content p, .text-content ul {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .text-content ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        .banner-image {
-            flex-shrink: 0;
-            width: 300px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        height: 58px;
+      }
+      svg {
+        display: block;
+      }
+      .logo-link {
+        position: absolute;
+        top: 0;
+        left: 11px; /* Adjust this value to position the logo horizontally */
+      }
+      .logo-link img {
+        height: 58px; /* Ensure the image height matches the height of the rectangle */
+      }
+      .buttons {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .imageAU{
+        width: auto; /* Adjust width as needed */
+        height: 550px; /* Maintain aspect ratio */
+        margin-top: 100px;
+       
+      }
+      .buttons button {
+        background-color: rgba(0, 0, 0, 0.936);
+        border: 5px solid rgb(0, 0, 0);
+        padding: 5px 10px;
+        margin-right: 8px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 15px;
+      }
+      p {
+        width: 714px; /* Set the width of the paragraph */
+        margin: 32px;
+        font-family: 'Lexend', sans-serif; /* Correctly using the Lexend font */
+    }
+    h2{
+      margin: 32px;
+      font-family: 'Lexend', sans-serif; /* Correctly using the Lexend font */
+    }
+    h3{
+      margin: 32px;
+      font-family: 'Lexend', sans-serif; /* Correctly using the Lexend font */
+    }
+    .content1 {
+      display: flex; /* Use flexbox for layout */
+      align-items: flex-start; /* Align items at the top */
+   
+  }
+  
+      
+      .about-us-button {
+        color: #CFF8BD;/* Set the text color to green */
+      }
+      .data-arena-button {
+        color: white;
+      }
+      .dashboard-button {
+        color: white;
+      }
     </style>
-</head>
-
-<body>
-    <!-- Header Section -->
+  </head>
+  
+  <body>
     <div class="container">
-        <svg width="100%" height="58">
-            <rect width="100%" height="58" fill="black" />
-        </svg>
+      <svg width="100%" height="58">
+        <rect width="100%" height="58" fill="black" />
+      </svg>
 
-        
-        <a href="home.html" class="logo-link">
-            <img src="Syd1.png" alt="Logo" /> 
-        </a>
+      <!-- Logo as a clickable button to home -->
+      <a href="home.html" class="logo-link">
+        <img src="Logo1.png" alt="Logo" />
+      </a>
 
-        
-        <div class="buttons">
-            <button class="about-us-button" onclick="window.location.href='about-us.html'">About us</button>
-            <button onclick="window.location.href='data-arena.html'">Data Arena</button>
-            <button onclick="window.location.href='dashboard.html'">Dashboard</button>
-        </div>
+      <!-- Buttons on the right side of the rectangle -->
+      <div class="buttons">
+        <button class="about-us-button" onclick="window.location.href='about-us.html'">About us</button>
+        <button class="data-arena-button" onclick="window.location.href='data-arena.html'">Data Arena</button>
+        <button class="dashboard-button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+      </div>
     </div>
-
-    <!-- Main Content Section -->
-    <div class="content-container">
-        <!-- Text content (Left side) -->
-        <div class="text-content">
-            <h1>About Our Project</h1> 
-
-            
-            <p>✨ <b>Project Objective:</b> We’re on a mission to uncover how environmental factors influence various aspects of citizens’ well-being: from emotional and mental health to social and economic benefits.</p>
-            
-            <p>🌍 <b>Why It Matters:</b> Good well-being isn’t just about feeling great; it’s linked to better academic performance, mental resilience, and smarter life choices. Imagine a city where everyone thrives because of a greener environment!</p>
-            
-            <p>🔍 <b>Our Focus:</b> We’re analyzing how proximity to libraries, playgrounds, green spaces, and tree coverage correlates with well-being. Think of it as mapping the city’s hidden happiness factors.</p>
-            
-            <p>📊 <b>Case Study:</b> City of Sydney. We’ve chosen Sydney as our research area, diving deep into its vibrant landscape to find out how green spaces contribute to a happier, healthier community.</p>
-            
-            <h2>Tools and Outputs:</h2> 
+    <div class="content1">
+      <div class="text">
+          <h2>About Our Project</h2>
+          <h3>Discover the Secret to Happier, Healthier Cities!</h3>
+          <p>✨ Project Objective: We’re on a mission to uncover how environmental factors influence various aspects of citizens’ well-being: from emotional and mental health to social and economic benefits.</p>
+          <p>🌍 Why It Matters: Good well-being isn’t just about feeling great; it’s linked to better academic performance, mental resilience, and smarter life choices. Imagine a city where everyone thrives because of a greener environment!</p>
+          <p>🔍 Our Focus: We’re analyzing how proximity to libraries, playgrounds, green spaces, and tree coverage correlates with well-being. Think of it as mapping the city’s hidden happiness factors.</p>
+          <p>📊 Case Study: City of Sydney. We’ve chosen Sydney as our research area, diving deep into its vibrant landscape to find out how green spaces contribute to a happier, healthier community.</p>
+          <h3>Tools and Outputs:</h3> 
             <ul>
                 <li>Data Analysis and Visualization: Dive into our data with interactive charts and graphs.</li>
                 <li>User-Friendly Website: Explore findings with ease on a user-friendly designed website.</li>
                 <li>Interactive Power BI Dashboard: See data come alive with our dynamic dashboard.</li>
                 <li>Immersive Data Arena Presentation: Experience our data in 3D at the UTS Data Arena – a truly immersive journey!</li>
             </ul>
-
-            <p>🌐 <b>Looking Ahead:</b> Imagine if cities worldwide adopted our strategies – greener, happier, and more efficient urban spaces for everyone. That’s our dream, and with your support, it’s within reach!</p>
-        </div>
-
-        
-        <img src="Playgroud_AboutUs.png" alt="City Wellbeing Visualization" class="banner-image"> 
-    </div>
-</body>
+          <p>🌐Looking Ahead: Imagine if cities worldwide adopted our strategies – greener, happier, and more efficient urban spaces for everyone. That’s our dream, and with your support, it’s within reach!</p>
+      </div>
+      <img src="Playgroud_AboutUs.png" alt="Description of image" class="imageAU">
+  </div>
+  
+  </body>
 </html>
+
+
 
